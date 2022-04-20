@@ -1,4 +1,8 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable react/jsx-indent */
+
 import React, { PureComponent } from 'react';
+import Button from './Button';
 import './Calculator.scss';
 
 export default class Calculator extends PureComponent {
@@ -6,25 +10,25 @@ export default class Calculator extends PureComponent {
     return (
       <div className="calculator">
         <input id="output" type="text" value="0" />
-        <button type="button">AC</button>
-        <button type="button">+/&ndash;</button>
-        <button type="button">%</button>
-        <button type="button" className="operators">&divide;</button>
-        <button type="button">7</button>
-        <button type="button">8</button>
-        <button type="button">9</button>
-        <button type="button" className="operators">&times;</button>
-        <button type="button">4</button>
-        <button type="button">5</button>
-        <button type="button">6</button>
-        <button type="button" className="operators">&ndash;</button>
-        <button type="button">1</button>
-        <button type="button">2</button>
-        <button type="button">3</button>
-        <button type="button" className="operators">+</button>
-        <button type="button" id="zero">0</button>
-        <button type="button">&bull;</button>
-        <button type="button" className="operators">=</button>
+        <Button text="AC" />
+        <Button text="+/&ndash;" />
+        <Button text="%" />
+        <Button className="operators" text="&divide;" />
+        <Button text="7" />
+        <Button text="8" />
+        <Button text="9" />
+        <Button className="operators" text="&times;" />
+        <Button text="4" />
+        <Button text="5" />
+        <Button text="6" />
+        <Button className="operators" text="&ndash;" />
+        <Button text="1" />
+        <Button text="2" />
+        <Button text="3" />
+        <Button className="operators" text="+" />
+        <Button id="zero" text="0" />
+        <Button text="&bull;" />
+        <Button className="operators" text="=" />
       </div>
     );
   }
