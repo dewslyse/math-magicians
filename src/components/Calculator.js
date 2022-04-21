@@ -1,30 +1,54 @@
 import React, { PureComponent } from 'react';
+import Button from './Button';
+import calculate from '../logic/calculate';
+import Display from './Display';
 import './Calculator.scss';
 
 export default class Calculator extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      total: '0',
+      next: '0',
+      operation: null,
+    };
+  }
+
+  onClick = (e) => {
+    const newValue = calculate(this.state, e.target.innerText);
+    this.setState(newValue);
+    const outPut = document.getElementById('output');
+    if (newValue.next !== null) {
+      outPut.textContent = newValue.next;
+    } else {
+      outPut.textContent = newValue.total;
+    }
+  };
+
   render() {
     return (
       <div className="calculator">
-        <input id="output" type="text" value="0" />
-        <button type="button">AC</button>
-        <button type="button">+/&ndash;</button>
-        <button type="button">%</button>
-        <button type="button" className="operators">&divide;</button>
-        <button type="button">7</button>
-        <button type="button">8</button>
-        <button type="button">9</button>
-        <button type="button" className="operators">&times;</button>
-        <button type="button">4</button>
-        <button type="button">5</button>
-        <button type="button">6</button>
-        <button type="button" className="operators">&ndash;</button>
-        <button type="button">1</button>
-        <button type="button">2</button>
-        <button type="button">3</button>
-        <button type="button" className="operators">+</button>
-        <button type="button" id="zero">0</button>
-        <button type="button">&bull;</button>
-        <button type="button" className="operators">=</button>
+        <Display />
+        <Button text="AC" onClick={this.onClick} />
+        <Button text="+/-" onClick={this.onClick} />
+        <Button text="%" onClick={this.onClick} />
+        <Button className="operators" text="&divide;" onClick={this.onClick} />
+        <Button text="7" onClick={this.onClick} />
+        <Button text="8" onClick={this.onClick} />
+        <Button text="9" onClick={this.onClick} />
+        <Button className="operators" text="x" onClick={this.onClick} />
+        <Button text="4" onClick={this.onClick} />
+        <Button text="5" onClick={this.onClick} />
+        <Button text="6" onClick={this.onClick} />
+        <Button className="operators" text="-" onClick={this.onClick} />
+        <Button text="1" onClick={this.onClick} />
+        <Button text="2" onClick={this.onClick} />
+        <Button text="3" onClick={this.onClick} />
+        <Button className="operators" text="+" onClick={this.onClick} />
+        <Button id="zero" text="0" onClick={this.onClick} />
+        <Button text="." onClick={this.onClick} />
+        <Button className="operators" text="=" onClick={this.onClick} />
       </div>
     );
   }
