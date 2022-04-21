@@ -18,7 +18,7 @@ body {
   grid-auto-rows: minmax(80px, auto);
 }
 
-#output {
+.output {
   grid-column: 1 / 5;
   background-color: $dark-gray;
   color: $white;
@@ -26,12 +26,27 @@ body {
   text-align: right;
   border: none;
   padding-right: 10px;
+  outline: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#output {
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 button {
   font-size: 1.25rem;
   font-family: 'Poppins', sans-serif;
   border: 1px solid $light-gray;
+
+  &:hover {
+    transform: scale(1.01);
+    border: 1px solid $orange;
+    cursor: pointer;
+  }
 }
 
 #zero {
@@ -40,4 +55,8 @@ button {
 
 .operators {
   background-color: $orange;
+
+  &:hover {
+    border: 1px solid $light-gray;
+  }
 }
