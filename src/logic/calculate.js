@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable react/jsx-indent */
+/* eslint-disable indent */
+
 import operate from './operate';
 
 function isNumber(item) {
