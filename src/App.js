@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 import React, { PureComponent } from 'react';
 import Calculator from './components/Calculator';
 
