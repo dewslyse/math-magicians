@@ -1,23 +1,19 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import Button from './Button';
 import calculate from '../logic/calculate';
 import Display from './Display';
 import './Calculator.scss';
 
-export default class Calculator extends PureComponent {
-  constructor(props) {
-    super(props);
+const Calculator = () => {
+  const [inputValue, setInputValue] = useState({
+    total: '0',
+    next: '0',
+    operation: null,
+  });
 
-    this.state = {
-      total: '0',
-      next: '0',
-      operation: null,
-    };
-  }
-
-  onClick = (e) => {
-    const newValue = calculate(this.state, e.target.innerText);
-    this.setState(newValue);
+  const onClick = (e) => {
+    const newValue = calculate(inputValue, e.target.innerText);
+    setInputValue(newValue);
     const outPut = document.getElementById('output');
     if (newValue.next !== null) {
       outPut.textContent = newValue.next;
@@ -26,30 +22,30 @@ export default class Calculator extends PureComponent {
     }
   };
 
-  render() {
-    return (
-      <div className="calculator">
-        <Display />
-        <Button text="AC" onClick={this.onClick} />
-        <Button text="+/-" onClick={this.onClick} />
-        <Button text="%" onClick={this.onClick} />
-        <Button className="operators" text="&divide;" onClick={this.onClick} />
-        <Button text="7" onClick={this.onClick} />
-        <Button text="8" onClick={this.onClick} />
-        <Button text="9" onClick={this.onClick} />
-        <Button className="operators" text="x" onClick={this.onClick} />
-        <Button text="4" onClick={this.onClick} />
-        <Button text="5" onClick={this.onClick} />
-        <Button text="6" onClick={this.onClick} />
-        <Button className="operators" text="-" onClick={this.onClick} />
-        <Button text="1" onClick={this.onClick} />
-        <Button text="2" onClick={this.onClick} />
-        <Button text="3" onClick={this.onClick} />
-        <Button className="operators" text="+" onClick={this.onClick} />
-        <Button id="zero" text="0" onClick={this.onClick} />
-        <Button text="." onClick={this.onClick} />
-        <Button className="operators" text="=" onClick={this.onClick} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="calculator">
+      <Display />
+      <Button text="AC" onClick={onClick} />
+      <Button text="+/-" onClick={onClick} />
+      <Button text="%" onClick={onClick} />
+      <Button className="operators" text="&divide;" onClick={onClick} />
+      <Button text="7" onClick={onClick} />
+      <Button text="8" onClick={onClick} />
+      <Button text="9" onClick={onClick} />
+      <Button className="operators" text="x" onClick={onClick} />
+      <Button text="4" onClick={onClick} />
+      <Button text="5" onClick={onClick} />
+      <Button text="6" onClick={onClick} />
+      <Button className="operators" text="-" onClick={onClick} />
+      <Button text="1" onClick={onClick} />
+      <Button text="2" onClick={onClick} />
+      <Button text="3" onClick={onClick} />
+      <Button className="operators" text="+" onClick={onClick} />
+      <Button id="zero" text="0" onClick={onClick} />
+      <Button text="." onClick={onClick} />
+      <Button className="operators" text="=" onClick={onClick} />
+    </div>
+  );
+};
+
+export default Calculator;
