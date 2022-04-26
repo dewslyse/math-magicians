@@ -6,6 +6,9 @@
 - Make simple calculations.
 - Read a random math-related quote.
 
+## Screenshot
+
+<img src="./screenshot.png">
 
 ## Built With
 
@@ -30,8 +33,6 @@ To get a local copy up and running follow this simple step:
 
 
 ## Author
-
-👤 **Author1**
 
 👤 **@dewslyse**
 
