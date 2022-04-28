@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.4;
+  background-color: azure;
+  display: block;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.main-caption {
+  font-size: 3rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-links {
+  list-style: none;
+  font-size: 1.375rem;
+  font-weight: 500;
+  margin-left: 50px;
+}
+
+.caption-l2 {
+  font-size: 1.75rem;
+  margin-bottom: 40px;
+}
+
+.main-text {
+  font-size: 1.25rem;
+  margin-bottom: 28px;
+}
+
+.home {
+  margin-top: 70px;
+}
+
+.quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.quote-text {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.calc-section {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+}
