@@ -20,7 +20,7 @@
 
 🔗 [Heroku](https://math-magicians-2804.herokuapp.com/)
 
-🔗 [Netlify](https://626a88d7d11a7600b6919dd2--dewslyse.netlify.app/)
+🔗 [Netlify](https://math-magicians-dewslyse.netlify.app/)
 
 
 ## Getting Started
